@@ -29,7 +29,7 @@ An implementation of [**EverForest**](https://everforest.vercel.app/) theme in [
 
 ## Special Thanks
 
-- The Callouts styles are inherited from [Mdmdt Theme](https://theme.typora.io/theme/Mdmdt/), thanks for @cayxc for contributing such beautiful theme.
+- The Callouts styles are inherited from [Mdmdt Theme](https://theme.typora.io/theme/Mdmdt/), thanks to @cayxc for contributing such beautiful theme.
 
 ## Links
 
