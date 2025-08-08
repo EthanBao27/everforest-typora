@@ -1,10 +1,11 @@
 <p align="center">
-  <img src="./samples/icon.ico" alt="icon" width="64" height="64" />
+  <img src="./samples/icon.ico" alt="icon" width="96" height="96" />
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Typora-Everforest-green.svg?style=flat-square" alt="Typora Everforest"/>
-    <img src="https://img.shields.io/github/license/EthanBao27/everforest-typora.svg?style=flat-square" alt="License"/>
+ <img src="https://img.shields.io/badge/Typora-Everforest-%23A7C080.svg?style=flat-square&labelColor=%23414B50" alt="Typora Everforest"/>
+ <img src="https://img.shields.io/github/license/EthanBao27/everforest-typora.svg?style=flat-square&color=%23E69875&labelColor=%23414B50" alt="License"/>
+ <img src="https://img.shields.io/github/stars/EthanBao27/everforest-typora.svg?style=flat-square&color=%23D699B6&labelColor=%23414B50" alt="GitHub Stars"/>
 </p>
 
 An implementation of [**EverForest**](https://everforest.vercel.app/) theme in [Typora](http://typora.io).
