@@ -1,0 +1,937 @@
+/*
+ * ------------------------------------------------------------------------
+ * everforest-dark.css
+ * Author: Ethan Bao
+ * Homepage:  https://github.com/EthanBao27/everforest-typora
+ * License: Apache-2.0
+ * ------------------------------------------------------------------------
+*/
+:root {
+  --ef-fg: #d3c6aa;
+  --ef-fg-muted: #9da9a0;
+  --ef-gray-0: #7a8478;
+  --ef-gray-1: #859289;
+  --ef-gray-2: #9da9a0;
+
+  /* "Medium" backgrounds (lightened a bit) */
+  --ef-bg-dim: #22282b;
+  --ef-bg-0: #2e353a;
+  --ef-bg-1: #363f44;
+  --ef-bg-2: #3f484d;
+  --ef-bg-3: #495156;
+  --ef-bg-4: #52595f;
+  --ef-bg-5: #5a6268;
+
+  --ef-red: #e67e80;
+  --ef-orange: #e69875;
+  --ef-yellow: #dbbc7f;
+  --ef-green: #a7c080;
+  --ef-aqua: #83c092;
+  --ef-blue: #7fbbb3;
+  --ef-purple: #d699b6;
+
+  /* UI */
+  --bg: var(--ef-bg-0);
+  --bg-panel: var(--ef-bg-1);
+  --bg-soft: var(--ef-bg-2);
+  --bg-muted: var(--ef-bg-3);
+  --text: var(--ef-fg);
+  --text-muted: var(--ef-gray-2);
+  --border: #444c50;
+  --accent: var(--ef-green);
+  --accent-2: var(--ef-blue);
+  --selection: #445047;
+
+  /* Callout template color mapping (Everforest) */
+  --color-1: var(--ef-blue);
+  --color-1-0-b: rgba(127, 187, 179, 0.12);
+
+  --color-2: var(--ef-red);
+  --color-2-0-b: rgba(230, 126, 128, 0.14);
+
+  --color-3: var(--ef-aqua);
+  --color-3-0-b: rgba(131, 192, 146, 0.12);
+
+  --color-4: var(--ef-purple);
+  --color-4-0-b: rgba(214, 153, 182, 0.14);
+
+  --color-5: var(--ef-yellow);
+  --color-5-0-b: rgba(219, 188, 127, 0.14);
+
+  /* Typography */
+  --font-body: "PingFang SC", "Microsoft YaHei", "LXGW WenKai", ui-serif, "Iowan Old Style", "Times New Roman", serif;
+  --font-code: ui-monospace, "JetBrains Mono", "Zed Plex Mono", "SFMono-Regular",
+    Menlo, Consolas, monospace;
+  --font-size: 16px;
+  --line-height: 1.65;
+
+  --radius: 10px;
+  --radius-sm: 8px;
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.25);
+  --shadow-2: 0 10px 24px rgba(0, 0, 0, 0.35);
+  --gap-1: 0.5rem;
+  --gap-2: 0.75rem;
+  --gap-3: 1rem;
+  --gap-4: 1.5rem;
+}
+
+
+body,
+.typora-export {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+}
+
+
+#write {
+  max-width: 840px;
+  margin: 2.2rem auto;
+  padding: 0 var(--gap-3);
+}
+
+
+::selection {
+  background: var(--selection);
+}
+
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ef-bg-4);
+  border-radius: 20px;
+  border: 2px solid var(--bg);
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+/* Headings */
+#write h1,
+#write h2,
+#write h3,
+#write h4,
+#write h5,
+#write h6 {
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.25;
+  margin: 2.2rem 0 1rem;
+}
+
+#write h1 {
+  font-size: 2.1rem;
+}
+
+#write h2 {
+  font-size: 1.8rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.35rem;
+}
+
+#write h3 {
+  font-size: 1.5rem;
+  border-bottom: 1px dashed var(--ef-bg-4);
+  padding-bottom: 0.25rem;
+}
+
+#write h4 {
+  font-size: 1.25rem;
+}
+
+#write h5 {
+  font-size: 1.1rem;
+}
+
+#write h6 {
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+
+/* Paragraph / Lists */
+#write p {
+  margin: 0 0 1.05rem;
+}
+
+#write strong { color: var(--ef-green); font-weight: 600; }
+
+#write em { color: var(--ef-purple); font-style: italic; }
+
+#write del {
+  color: var(--text-muted);
+}
+
+#write ul,
+#write ol {
+  margin: 0 0 1rem 1.5rem;
+}
+
+#write li {
+  margin: 0.3rem 0;
+}
+
+#write li > p {
+  margin: 0.2rem 0;
+}
+
+#write .task-list-item input {
+  transform: scale(1.05);
+}
+
+
+/* Links */
+#write a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+#write a:hover {
+  text-decoration: underline;
+}
+
+
+/* Blockquote (standard) */
+#write blockquote {
+  margin: 1.25rem 0;
+  padding: 0.8rem 1rem;
+  border-left: 4px solid var(--ef-aqua);
+  background: var(--ef-bg-2);
+  color: var(--text);
+  border-radius: var(--radius-sm);
+}
+
+
+/* Tables */
+#write table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  margin: 1.2rem 0;
+  background: var(--bg-panel);
+  box-shadow: var(--shadow-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+#write th,
+#write td {
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--ef-bg-3);
+}
+
+#write thead th {
+  background: var(--ef-bg-2);
+  color: var(--text);
+  text-align: left;
+}
+
+#write tbody tr:hover {
+  background: var(--ef-bg-1);
+}
+
+
+/* Inline code */
+#write code,
+#write tt {
+  font-family: var(--font-code);
+  font-size: 0.92em;
+  background: var(--ef-bg-1);
+  color: #d8edea;
+  border: 1px solid var(--ef-bg-3);
+  padding: 0.15rem 0.35rem;
+  border-radius: 6px;
+}
+
+
+/* Code fences */
+#write pre.md-fences {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  overflow: auto;
+  box-shadow: var(--shadow-1);
+}
+
+
+/* ==================== CodeMirror — Everforest token colors ==================== */
+.cm-s-inner,
+.cm-s-typora-default {
+  background: transparent;
+  color: var(--text);
+}
+
+.cm-s-inner .cm-comment {
+  color: #d699b6;
+  font-style: italic;
+}
+
+.cm-s-inner .cm-keyword {
+  color: #e67e80;
+  font-weight: 600;
+}
+
+.cm-s-inner .cm-atom,
+.cm-s-inner .cm-number {
+  color: #e69875;
+}
+
+.cm-s-inner .cm-def,
+.cm-s-inner .cm-variable {
+  color: var(--text);
+}
+
+.cm-s-inner .cm-variable-2 {
+  color: #7fbbb3;
+}
+
+.cm-s-inner .cm-variable-3 {
+  color: #83c092;
+}
+
+.cm-s-inner .cm-string {
+  color: #a7c080;
+}
+
+.cm-s-inner .cm-property {
+  color: #7fbbb3;
+}
+
+.cm-s-inner .cm-operator {
+  color: var(--text);
+}
+
+.cm-s-inner .cm-tag {
+  color: #e67e80;
+}
+
+.cm-s-inner .cm-attribute {
+  color: #dbbc7f;
+}
+
+.cm-s-inner .cm-meta {
+  color: #7a8478;
+}
+
+.cm-s-inner .cm-builtin {
+  color: #83c092;
+}
+
+.cm-s-inner .cm-quote {
+  color: #a7c080;
+}
+
+.cm-s-inner .cm-hr {
+  color: #859289;
+}
+
+.cm-s-inner .cm-link {
+  color: #7fbbb3;
+  text-decoration: underline;
+}
+
+.cm-s-inner .cm-error {
+  color: #1a0d0d;
+  background: #e67e80;
+}
+
+
+/* ===================================================================
+   CALL OUTS — Using provided template & Everforest palette variables
+   =================================================================== */
+/*
+ * ------------------------
+ * blockquote / md-alert (template)
+ * ------------------------
+*/
+blockquote,
+.md-alert {
+  margin: 14px 0;
+  padding: 16px;
+  background: var(--color-1-0-b);
+  box-sizing: border-box;
+  border-radius: 8px;
+  border-left: 4px solid var(--color-1);
+  border-right: 0.1px solid transparent;
+  border-bottom: 0.1px solid transparent;
+  border-top: 0.1px solid transparent;
+}
+
+blockquote blockquote {
+  background: var(--color-1-0-b);
+}
+
+blockquote > blockquote,
+blockquote > .md-alert,
+.md-alert > .md-alert,
+.md-alert > blockquote {
+  margin-bottom: 0;
+}
+
+p + blockquote,
+p + .md-alert {
+  margin-top: -8px;
+}
+
+.md-alert.md-alert-note > *:first-child,
+.md-alert.md-alert-caution > *:first-child,
+.md-alert.md-alert-tip > *:first-child,
+.md-alert.md-alert-important > *:first-child,
+.md-alert.md-alert-warning > *:first-child {
+  margin-top: 0;
+  line-height: 1;
+  margin-bottom: -4px;
+}
+
+.md-alert.md-alert-note > *:last-child,
+.md-alert.md-alert-caution > *:last-child,
+.md-alert.md-alert-tip > *:last-child,
+.md-alert.md-alert-important > *:last-child,
+.md-alert.md-alert-warning > *:last-child {
+  margin-bottom: 0;
+}
+
+.md-alert.md-alert-note {
+  border-left-color: var(--color-1);
+  background: var(--color-1-0-b);
+  color: var(--color-1);
+}
+
+.md-alert.md-alert-note .md-alert-text-note { color: var(--color-1); }
+
+.md-alert.md-alert-caution {
+  border-left-color: var(--color-2);
+  background: var(--color-2-0-b);
+  color: var(--color-2);
+}
+
+.md-alert.md-alert-caution .md-alert-text-caution { color: var(--color-2); }
+
+.md-alert.md-alert-tip {
+  border-left-color: var(--color-3);
+  background: var(--color-3-0-b);
+  color: var(--color-3);
+}
+
+.md-alert.md-alert-tip .md-alert-text-tip { color: var(--color-3); }
+
+.md-alert.md-alert-important {
+  border-left-color: var(--color-4);
+  background: var(--color-4-0-b);
+  color: var(--color-4);
+}
+
+.md-alert.md-alert-important .md-alert-text-important { color: var(--color-4); }
+
+.md-alert.md-alert-warning {
+  border-left-color: var(--color-5);
+  background: var(--color-5-0-b);
+  color: var(--color-5);
+}
+
+.md-alert.md-alert-warning .md-alert-text-warning { color: var(--color-5); }
+
+
+/* TOC */
+.md-toc {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.7rem 0.8rem;
+}
+
+.md-toc-item:hover {
+  background: var(--ef-bg-2);
+}
+
+
+/* Footer */
+.footnotes,
+.footnotes-area {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  border-top: 1px dashed var(--ef-bg-4);
+  margin-top: 2rem;
+}
+
+
+/* Images */
+#write img {
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-2);
+}
+
+#write figcaption {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+
+#a7c080;
+  border-radius: 4px;
+  background: transparent;
+  position: relative;
+  cursor: pointer;
+}
+.md-task-list-item > input[type="checkbox"]:checked {
+  background-color: #a7c080;
+  border-color: #a7c080;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.5 8.5l3 3 6-6' stroke='%23ffffff' stroke-width='2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+/* Prefer native accent-color for crisp OS rendering */
+.task-list-item input[type="checkbox"],
+input[type="checkbox"] {
+  accent-color: var(--ef-green);
+}
+
+
+/* Fallback polishing when accent-color not applied */
+.task-list-item input[type="checkbox"] {
+  width: 1.05em;
+  height: 1.05em;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+  border-radius: 4px;
+}
+
+.task-list-item input[type="checkbox"]:focus {
+  outline: 2px solid rgba(167, 192, 128, 0.45);
+  outline-offset: 2px;
+}
+
+
+/* ==================== Sidebar / Outline / Tabs ==================== */
+#typora-sidebar,
+#typora-sidebar *,
+.sidebar,
+.sidebar * {
+  -webkit-font-smoothing: antialiased;
+}
+
+
+#typora-sidebar,
+.sidebar {
+  background: var(--bg-panel);
+  color: var(--text);
+  border-right: 1px solid var(--border);
+}
+
+
+/* Sidebar tabs */
+.sidebar-tabs,
+.sidebar-tabs .tab-bar,
+.sidebar-footer {
+  background: var(--bg-panel);
+  border-top: 1px solid var(--border);
+}
+
+.sidebar-tab,
+.sidebar-tab:hover {
+  color: var(--text-muted);
+}
+
+.sidebar-tab.active,
+.sidebar-tab-active,
+.sidebar-tab.active:hover {
+  color: var(--text);
+  border-bottom: 1px solid var(--ef-bg-4);
+}
+
+
+/* File tree / file list */
+.file-list-item,
+.file-node-content,
+.file-node-title {
+  color: var(--text-muted);
+}
+
+.file-node-content.active,
+.file-node-content.active .file-node-title,
+.file-list-item.active {
+  background: var(--bg-muted);
+  color: var(--text);
+}
+
+
+/* Search box & inputs in sidebar */
+.sidebar input[type="text"],
+#typora-sidebar input[type="text"] {
+  background: var(--bg-soft);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.35rem 0.5rem;
+}
+
+.sidebar input[type="text"]::placeholder {
+  color: var(--text-muted);
+}
+
+
+#write b { color: var(--ef-green); font-weight: 600; }
+
+
+/* Bold-italic uses fixed #d3c6aa */
+#write em strong, #write strong em, #write em b, #write b em {
+  color: #d3c6aa;
+  font-weight: 600;
+  font-style: italic;
+}
+
+
+
+/* ===== Task list (inline, no wrap) ===== */
+#write li.task-list-item, #write li.md-task-list-item {
+  list-style: none;
+  position: relative;
+  padding-left: 1.8rem;
+  margin: .35rem 0;
+}
+
+#write li.task-list-item > input[type="checkbox"],
+#write li.md-task-list-item > input[type="checkbox"] {
+  position: absolute;
+  left: 0;
+  top: .25em;
+  width: 1.1em;
+  height: 1.1em;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 6px;
+  border: 2px solid var(--ef-green);
+  background: transparent;
+  margin: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#write li.task-list-item > p, #write li.md-task-list-item > p {
+  display: inline;
+  margin: 0;
+}
+
+/* accent-color path */
+#write li.task-list-item > input[type="checkbox"],
+#write li.md-task-list-item > input[type="checkbox"] {
+  accent-color: var(--ef-green);
+}
+
+#write li.task-list-item > input[type="checkbox"]:checked,
+#write li.md-task-list-item > input[type="checkbox"]:checked {
+  background-color: var(--ef-green);
+  border-color: var(--ef-green);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.5 8.5l3 3 6-6' stroke='%230f1716' stroke-width='2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+
+/* Horizontal rule */
+#write hr {
+  border: none;
+  border-top: 1px solid #3a4246;
+  margin: 2rem 0;
+}
+
+
+/* Sidebar color enforcement */
+#typora-sidebar,
+.sidebar {
+  background: var(--bg-panel);
+  color: var(--text);
+}
+
+
+/* Reduce any background transitions to avoid flash */
+#typora-sidebar, .sidebar, .sidebar * {
+  transition: background-color 0s !important;
+}
+
+
+
+/* ================= Sidebar (MDMDT-style logic, dark) ================ */
+/* Base sidebar panel */
+#typora-sidebar,
+.sidebar {
+  background: var(--bg) !important;
+  color: var(--text);
+  border-right: 1px solid var(--border);
+  box-shadow: none;
+  overflow: hidden;
+}
+
+
+/* Megamenu sidebar (preferences / open) */
+.unibody-window #megamenu-menu-sidebar {
+  background: var(--bg) !important;
+  border-right: 1px solid var(--border);
+  box-shadow: none;
+  overflow: hidden;
+}
+
+#megamenu-menu-sidebar .megamenu-menu-list { border: none; }
+
+
+/* Sidebar tabs & footer */
+.sidebar-tabs, .sidebar-tabs .tab-bar, .sidebar-footer {
+  background: var(--bg) !important;
+  border-top: 1px solid var(--border);
+}
+
+.sidebar-tab, .sidebar-tab:hover { color: var(--text-muted); }
+
+.sidebar-tab.active, .sidebar-tab-active, .sidebar-tab.active:hover {
+  color: var(--text);
+  border-bottom: 1px solid var(--ef-bg-4);
+}
+
+
+/* Prevent white flash when switching sidebar content */
+#typora-sidebar, .sidebar, .sidebar * {
+  transition: background-color 0s, color 0s;
+}
+
+
+
+/* ===== Sidebar anti-flash & outline title line (DARK) ===== */
+/* 让 Typora 动画阶段使用我们自定义的侧边栏背景，而不是默认白色 */
+:root {
+  --side-bar-bg-color: var(--bg);
+}
+
+
+/* 统一侧边栏及其子元素背景，避免切换时出现白色闪屏 */
+#typora-sidebar,
+.sidebar,
+.sidebar * {
+  background: var(--side-bar-bg-color) !important;
+}
+
+
+/* 边框与阴影保持暗色风格 */
+#typora-sidebar,
+.sidebar {
+  border-right: 1px solid var(--border) !important;
+  box-shadow: none !important;
+  overflow: hidden; /* 防止切换时出现背景层外露 */
+}
+
+
+/* 避免背景在切换动画中过渡为默认色造成闪屏 */
+#typora-sidebar,
+.sidebar,
+.sidebar * {
+  transition: background-color 0s, color 0s !important;
+}
+
+
+/* =========================
+   GLOBAL BACKGROUND GUARD
+   （全局防白闪）
+   ========================= */
+:root {
+  color-scheme: dark;
+  --window-bg: var(--bg);
+}
+
+
+/* 移除可能导致闪烁的背景过渡 */
+html, body, #typora-sidebar, .sidebar, .sidebar *, #megamenu-menu, #megamenu-content, #megamenu-menu-sidebar, .megamenu-content, .megamenu-menu, .megamenu-menu-list {
+  transition: background-color 0s !important;
+}
+
+/* === Outline blocks copied from Light, with lighter underline === */
+
+.file-node-content:hover,
+.file-list-item:hover,
+.outline-item:hover,
+.outline-item-container:hover {
+  background: var(--bg-soft);
+  color: var(--text);
+}
+
+
+/* Outline panel */
+.outline-panel,
+.outline-content,
+.outline-title,
+.outline-item,
+.outline-label {
+  background: var(--bg-panel);
+  color: var(--text-muted);
+}
+.outline-title {
+  color: var(--text);
+  font-weight: 600;
+  border-bottom: 1px solid var(--border);
+}
+.outline-item.active,
+.outline-item .active {
+  background: var(--bg-muted);
+  color: var(--text);
+}
+
+.outline-item.active,
+.outline-item .active {
+  background: var(--bg-muted);
+  color: var(--text);
+}
+
+
+/* 侧边栏相关容器/区域在切换时也保持同色背景 */
+.sidebar-tabs,
+.sidebar-tabs .tab-bar,
+.sidebar-footer,
+.sidebar-content,
+.outline-panel,
+.outline-content,
+.outline-item,
+.outline-item-container,
+#file-library-list,
+#file-library-search-result,
+#file-library-tree,
+.sidebar-resizer {
+  background: var(--side-bar-bg-color) !important;
+}
+
+
+/* 覆盖所有关键容器，确保在打开/关闭侧边栏、切换面板、Megamenu 动画时不出现白底 */
+html,
+body,
+#app,
+#typora-app,
+.typora-export,
+#write,
+.content,
+#main,
+.window-frame,
+.titlebar,
+#typora-sidebar,
+.sidebar,
+.sidebar-content,
+.sidebar-tabs,
+.sidebar-footer,
+.sidebar-resizer,
+#megamenu-menu,
+#megamenu-content,
+#megamenu-menu-sidebar,
+.megamenu-menu,
+.megamenu-menu-list,
+.megamenu-content,
+#file-library-list,
+#file-library-search-result,
+#file-library-tree,
+.outline-panel,
+.outline-content,
+.outline-item-container,
+.outline-item {
+  background: var(--window-bg) !important;
+}
+
+.outline-title,
+.outline-header,
+.outline,
+.outline-panel {
+  border-bottom: none !important;
+}
+
+
+/* ==== Final custom adjustments ==== */
+
+/* 1. Remove unwanted extra border line in outline */
+.outline-title,
+.outline-header,
+.outline,
+.outline-panel {
+  border-bottom: none !important;
+}
+
+/* 2. Callouts icon spacing: increase space between icon/title and content */
+.md-alert > *:first-child {
+  margin-bottom: 0.5rem !important;
+  line-height: 1.2 !important;
+}
+
+/* 3. Code block font size bigger */
+#write pre.md-fences {
+  font-size: 1.05rem !important;
+}
+#write code,
+#write tt {
+  font-size: 1rem !important;
+}
+
+
+/* ==== Final custom adjustments ==== */
+
+/* 1. Remove unwanted extra border line in outline */
+.outline-title,
+.outline-header,
+.outline,
+.outline-panel {
+  border-bottom: none !important;
+}
+
+/* 2. Callouts icon spacing */
+.md-alert > *:first-child {
+  margin-bottom: 0.5rem !important;
+  line-height: 1.2 !important;
+}
+
+/* 3. Code block font size bigger */
+#write pre.md-fences {
+  font-size: 1.05rem !important;
+}
+#write code,
+#write tt {
+  font-size: 1rem !important;
+}
+
+/* Blockquote — vertical center alignment fix */
+#write blockquote {
+  display: flex;
+  align-items: center;
+  min-height: 3.0em;
+  line-height: 1.6;
+  box-sizing: border-box;
+}
+
+#write blockquote > p,
+#write blockquote > :not(blockquote) {
+  margin: 0;
+}
+
+/* ==== Export View & Print Background ==== */
+.typora-export,
+.typora-export body {
+  background: var(--bg) !important;
+  color: var(--text) !important;
+}
+
+@media print {
+  body,
+  html,
+  .typora-export {
+    background: var(--bg) !important;
+    color: var(--text) !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
