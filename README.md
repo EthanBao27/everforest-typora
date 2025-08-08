@@ -1,3 +1,12 @@
+<p align="center">
+  <img src="./samples/icon.ico" alt="icon" width="64" height="64" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Typora-Everforest-green.svg?style=flat-square" alt="Typora Everforest"/>
+    <img src="https://img.shields.io/github/license/EthanBao27/everforest-typora.svg?style=flat-square" alt="License"/>
+</p>
+
 An implementation of [**EverForest**](https://everforest.vercel.app/) theme in [Typora](http://typora.io).
 
 ## Screenshots
