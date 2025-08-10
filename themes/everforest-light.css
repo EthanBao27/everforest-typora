@@ -2,7 +2,7 @@
  * ------------------------------------------------------------------------
  * everforest-light.css
  * Author: Ethan Bao
- * Homepage: https://github.com/EthanBao27/everforest-typora
+ * Homepage:  https://github.com/EthanBao27/typora-everforest-theme.com
  * License: Apache-2.0
  * ------------------------------------------------------------------------
  */
@@ -771,4 +771,26 @@ body,
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
+}
+
+
+/* ==== Override: make bold text green ==== */
+#write b,
+#write strong {
+  color: var(--ef-green) !important;
+  font-weight: 600;
+}
+
+
+/* ==== Override: remove sidebar outline label/item background badges ==== */
+.outline-item,
+.outline-label {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Also remove hover highlight boxes for outline items */
+.outline-item:hover,
+.outline-item-container:hover {
+  background: transparent !important;
 }
