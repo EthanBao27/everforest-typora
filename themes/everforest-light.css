@@ -42,6 +42,27 @@
   --accent-2: var(--ef-blue);
   --selection: #e0e6c9;
 
+  /* Typora UI Variables */
+  --bg-color: var(--bg);
+  --text-color: var(--text);
+  --md-char-color: var(--ef-gray-1);
+  --meta-content-color: var(--ef-fg-muted);
+  
+  --primary-color: var(--ef-green);
+  --primary-btn-border-color: var(--ef-bg-4);
+  --primary-btn-text-color: #ffffff;
+  
+  --window-border: 1px solid var(--border);
+  --active-file-bg-color: var(--bg-muted);
+  --active-file-text-color: var(--text);
+  --active-file-border-color: var(--accent);
+  
+  --side-bar-bg-color: var(--bg-panel);
+  --item-hover-bg-color: var(--bg-soft);
+  --item-hover-text-color: var(--text);
+  
+  --monospace: ui-monospace, "JetBrains Mono", "Zed Plex Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+
   /* Callout template colors mapping (Everforest) */
   /* note → blue, caution → red, tip → aqua, important → purple, warning → yellow */
   --color-1: var(--ef-blue);
@@ -531,12 +552,46 @@ input[type="checkbox"] {
 .outline-title {
   color: var(--text);
   font-weight: 600;
-  border-bottom: 1px solid var(--border);
+  border-bottom: none;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+/* Create the green-center gray-sides underline */
+.outline-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, 
+    var(--border) 0%, 
+    var(--border) 35%, 
+    var(--ef-green) 50%, 
+    var(--border) 65%, 
+    var(--border) 100%
+  ) !important;
+  display: block !important;
 }
 .outline-item.active,
 .outline-item .active {
-  background: var(--bg-muted);
+  background: transparent;
   color: var(--text);
+  font-weight: 600;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove borders from file nodes in sidebar */
+.file-node-content,
+.file-node-title,
+.file-list-item,
+.file-node-content.active,
+.file-node-content.active .file-node-title,
+.file-list-item.active {
+  border: none !important;
+  box-shadow: none !important;
 }
 
 /* Search box & inputs in sidebar */
@@ -793,4 +848,78 @@ body,
 .outline-item:hover,
 .outline-item-container:hover {
   background: transparent !important;
+}
+
+/* ==== UI Elements Outside Writing Area (Light Theme) ==== */
+/* Fix for settings dialog and other UI components */
+:not(#write *) {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+}
+
+/* Specific fixes for common UI elements */
+.dialog,
+.modal,
+.popup,
+.ty-tooltip,
+#megamenu-content,
+#file-library-search-result,
+.preference-panel,
+.settings-panel,
+input:not(#write *),
+select:not(#write *),
+button:not(#write *),
+label:not(#write *),
+span:not(#write *) {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+}
+
+/* Only add border to elements that need it */
+.dialog,
+.modal,
+.popup,
+.preference-panel,
+.settings-panel,
+input:not(#write *),
+select:not(#write *),
+button:not(#write *) {
+  border-color: var(--border) !important;
+}
+
+/* Fix for input fields and text areas */
+input[type="text"]:not(#write *),
+input[type="password"]:not(#write *),
+input[type="email"]:not(#write *),
+input[type="number"]:not(#write *),
+textarea:not(#write *),
+select:not(#write *) {
+  background-color: var(--bg-soft) !important;
+  color: var(--text-color) !important;
+  border: 1px solid var(--border) !important;
+}
+
+/* Fix for buttons */
+button:not(#write *),
+.btn:not(#write *) {
+  background-color: var(--primary-color) !important;
+  color: var(--primary-btn-text-color) !important;
+  border: 1px solid var(--primary-btn-border-color) !important;
+}
+
+/* Fix for file search dialog (Cmd+Shift+O) */
+#file-library-search,
+.search-input,
+.search-result,
+.file-list-item {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+}
+
+/* Fix for status bar */
+.status-bar,
+.footer-bar {
+  background-color: var(--bg-panel) !important;
+  color: var(--text-color) !important;
+  border-top: 1px solid var(--border) !important;
 }

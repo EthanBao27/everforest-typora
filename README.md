@@ -31,7 +31,7 @@ An implementation of [**EverForest**](https://everforest.vercel.app/) theme in [
 
 3. **Copy theme files**
 
-   - Place the everforest.css file and its resources into the theme folder.
+   - Place the everforest.css file into the theme folder.
 
 4. **Apply the theme**
 

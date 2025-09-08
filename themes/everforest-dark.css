@@ -42,6 +42,27 @@
   --accent-2: var(--ef-blue);
   --selection: #445047;
 
+  /* Typora UI Variables */
+  --bg-color: var(--bg);
+  --text-color: var(--text);
+  --md-char-color: var(--ef-gray-1);
+  --meta-content-color: var(--ef-gray-2);
+  
+  --primary-color: var(--ef-green);
+  --primary-btn-border-color: var(--ef-bg-4);
+  --primary-btn-text-color: var(--ef-bg-0);
+  
+  --window-border: 1px solid var(--border);
+  --active-file-bg-color: var(--bg-muted);
+  --active-file-text-color: var(--text);
+  --active-file-border-color: var(--accent);
+  
+  --side-bar-bg-color: var(--bg-panel);
+  --item-hover-bg-color: var(--bg-soft);
+  --item-hover-text-color: var(--text);
+  
+  --monospace: ui-monospace, "JetBrains Mono", "Zed Plex Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+
   /* Callout template color mapping (Everforest) */
   --color-1: var(--ef-blue);
   --color-1-0-b: rgba(127, 187, 179, 0.12);
@@ -479,7 +500,13 @@ p + .md-alert {
 }
 
 
-#a7c080;
+.md-task-list-item > input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1.1em;
+  height: 1.1em;
+  margin: 0 0.5em 0 0;
+  border: 2px solid #a7c080;
   border-radius: 4px;
   background: transparent;
   position: relative;
@@ -780,18 +807,46 @@ html, body, #typora-sidebar, .sidebar, .sidebar *, #megamenu-menu, #megamenu-con
 .outline-title {
   color: var(--text);
   font-weight: 600;
-  border-bottom: 1px solid var(--border);
+  border-bottom: none;
+  position: relative;
+  padding-bottom: 0.5rem;
 }
-.outline-item.active,
-.outline-item .active {
-  background: var(--bg-muted);
-  color: var(--text);
+
+/* Create the green-center gray-sides underline */
+.outline-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, 
+    var(--border) 0%, 
+    var(--border) 35%, 
+    var(--ef-green) 50%, 
+    var(--border) 65%, 
+    var(--border) 100%
+  );
 }
 
 .outline-item.active,
 .outline-item .active {
-  background: var(--bg-muted);
+  background: transparent;
   color: var(--text);
+  font-weight: 600;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove borders from file nodes in sidebar */
+.file-node-content,
+.file-node-title,
+.file-list-item,
+.file-node-content.active,
+.file-node-content.active .file-node-title,
+.file-list-item.active {
+  border: none !important;
+  box-shadow: none !important;
 }
 
 
@@ -856,7 +911,6 @@ body,
 /* ==== Final custom adjustments ==== */
 
 /* 1. Remove unwanted extra border line in outline */
-.outline-title,
 .outline-header,
 .outline,
 .outline-panel {
@@ -882,7 +936,6 @@ body,
 /* ==== Final custom adjustments ==== */
 
 /* 1. Remove unwanted extra border line in outline */
-.outline-title,
 .outline-header,
 .outline,
 .outline-panel {
@@ -948,4 +1001,99 @@ body,
 .outline-item:hover,
 .outline-item-container:hover {
   background: transparent !important;
+}
+
+/* ==== Fix CodeMirror line highlighting ==== */
+#write .CodeMirror-activeline-background,
+#write .CodeMirror-selected,
+#write .CodeMirror-linebackground,
+#write pre.CodeMirror-line .CodeMirror-linebackground,
+#write .CodeMirror-code .CodeMirror-activeline,
+#write .CodeMirror-activeline .CodeMirror-linebackground {
+  background: var(--bg-soft) !important;
+}
+
+/* Fix any white background in code elements */
+#write .CodeMirror,
+#write .CodeMirror-gutters,
+#write .CodeMirror-lines,
+#write .CodeMirror-code,
+#write .CodeMirror-line,
+#write pre.CodeMirror-line,
+#write .CodeMirror-linebackground {
+  background: transparent !important;
+}
+
+/* ==== UI Elements Outside Writing Area ==== */
+/* Fix for settings dialog and other UI components */
+:not(#write *) {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+}
+
+/* Specific fixes for common UI elements */
+.dialog,
+.modal,
+.popup,
+.ty-tooltip,
+#megamenu-content,
+#file-library-search-result,
+.preference-panel,
+.settings-panel,
+input:not(#write *),
+select:not(#write *),
+button:not(#write *),
+label:not(#write *),
+span:not(#write *) {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+}
+
+/* Only add border to elements that need it */
+.dialog,
+.modal,
+.popup,
+.preference-panel,
+.settings-panel,
+input:not(#write *),
+select:not(#write *),
+button:not(#write *) {
+  border-color: var(--border) !important;
+}
+
+/* Fix for input fields and text areas */
+input[type="text"]:not(#write *),
+input[type="password"]:not(#write *),
+input[type="email"]:not(#write *),
+input[type="number"]:not(#write *),
+textarea:not(#write *),
+select:not(#write *) {
+  background-color: var(--bg-soft) !important;
+  color: var(--text-color) !important;
+  border: 1px solid var(--border) !important;
+}
+
+/* Fix for buttons */
+button:not(#write *),
+.btn:not(#write *) {
+  background-color: var(--primary-color) !important;
+  color: var(--primary-btn-text-color) !important;
+  border: 1px solid var(--primary-btn-border-color) !important;
+}
+
+/* Fix for file search dialog (Cmd+Shift+O) */
+#file-library-search,
+.search-input,
+.search-result,
+.file-list-item {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+}
+
+/* Fix for status bar */
+.status-bar,
+.footer-bar {
+  background-color: var(--bg-panel) !important;
+  color: var(--text-color) !important;
+  border-top: 1px solid var(--border) !important;
 }
