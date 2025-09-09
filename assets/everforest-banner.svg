@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="360" viewBox="0 0 1600 360">
+  <defs>
+    <!-- Everforest text gradient -->
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"  stop-color="#A7C080"/>
+      <stop offset="50%" stop-color="#D3C6AA"/>
+      <stop offset="100%" stop-color="#E69875"/>
+    </linearGradient>
+
+    <!-- Background gradient -->
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#2D353B"/>
+      <stop offset="100%" stop-color="#414B50"/>
+    </linearGradient>
+
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- background with gradient -->
+  <rect x="0" y="0" width="1600" height="360" rx="28" fill="url(#bg)"/>
+
+  <!-- title -->
+  <g filter="url(#shadow)">
+    <text x="50%" y="56%" text-anchor="middle"
+          font-family="ui-sans-serif, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial"
+          font-size="140" font-weight="800" letter-spacing="6"
+          fill="url(#g)">EVERFOREST</text>
+    <text x="50%" y="76%" text-anchor="middle"
+          font-family="ui-sans-serif, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial"
+          font-size="34" letter-spacing="4"
+          fill="#D3C6AA" opacity="0.9">A calm, forest-inspired theme for Typora</text>
+  </g>
+
+  <!-- corner accents -->
+  <circle cx="60" cy="60" r="6" fill="#A7C080" opacity="0.8"/>
+  <circle cx="1540" cy="300" r="6" fill="#D699B6" opacity="0.8"/>
+</svg>
