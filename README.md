@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <img src="./assets/everforest-banner.svg" alt="EVERFOREST" width="800">
+  <img src="./assets/everforest-banner.svg" alt="EVERFOREST" width="450">
 </p>
 
 <p align="center">
